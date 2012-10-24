@@ -15,11 +15,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="sendMessage"
-        android:text="@string/button_send" />   
-
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:id="@+id/frg_cantainer"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent" >
-	</FrameLayout>
+        android:text="@string/button_send" />
+    
+    <fragment android:name="tryby.and.tresh.MainFragment"
+              android:id="@+id/headlines_fragment"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" />
+    
 </LinearLayout>
