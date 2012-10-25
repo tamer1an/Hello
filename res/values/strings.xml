@@ -1,12 +1,11 @@
 <resources>
 
-    <string name="app_name">HelloApp</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
+    <string name="app_name">Tresh</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="edit_message">edit this text</string>
-    <string name="button_send">Send</string>
-    <string name="title_activity_display_message">My Message</string>
-    <string name="title_activity_main_fragment">MainFragment</string>
-
+    <string name="et_1">clicker couter</string>
+    <string name="btn_1">Click me!</string>
+    <string name="colorSmall">Use colored text</string>
+    <string name="colorLarge">check the chekbox please</string>
+    <string name="boldLarge">Use bold type</string>
+    <string name="boldSmall">check the checkbox for </string>
 </resources>
