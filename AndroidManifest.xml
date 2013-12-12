@@ -29,6 +29,7 @@
               
         </activity>
         <activity android:name=".Second"></activity>
+        <activity android:name=".Frame"></activity>
     </application>
 
 </manifest>

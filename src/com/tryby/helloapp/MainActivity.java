@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -30,22 +31,22 @@ public class MainActivity extends Activity {
         Button b = (Button) findViewById(R.id.lunchSecond);
         b.setOnClickListener(new OnClickListener() {			
 			public void onClick(View v) {
+				Log.d("LEE", "button was clicked");//logging to console
 				Intent intent = new Intent(MainActivity.this, Second.class);
 				intent.putExtra("text", et.getText().toString());				
-					
-				 startActivity(new Intent(intent));				
+				startActivity(new Intent(intent)); 
 			}
 		});  
         
         //change pic to other than default pic in xml
         ImageView imageView = (ImageView) findViewById(R.id.imageView2);
-        imageView.setImageResource(R.drawable.test);
-        
+        imageView.setImageResource(R.drawable.test);        
        
         // check wi-fi connectivity
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         TextView tw = (TextView) findViewById(R.id.textView1);
         boolean wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting();
+        
         if(wifi){
         	tw.setText("wifi is on");
         }else{
@@ -54,8 +55,8 @@ public class MainActivity extends Activity {
         
         
 // Implicit Intent
-//        ImageView iv = (ImageView) findViewById(R.id.imageView1);
-//        iv.setImageURI((Uri) getIntent().getExtras().get(Intent.EXTRA_STREAM));
+// ImageView iv = (ImageView) findViewById(R.id.imageView1);
+// iv.setImageURI((Uri) getIntent().getExtras().get(Intent.EXTRA_STREAM));
         
     }
 
