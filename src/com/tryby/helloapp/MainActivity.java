@@ -53,6 +53,13 @@ public class MainActivity extends Activity {
         	tw.setText("wifi is off");
         }
         
+        tw.setOnClickListener(new OnClickListener() {		//intent.putExtra("text", et.getText().toString());			
+			public void onClick(View v) {
+				Log.d("LEE", "tw was clicked");//logging to console
+				Intent intent = new Intent(MainActivity.this, Table.class);						
+				startActivity(new Intent(intent)); 
+			}
+		});
         
 // Implicit Intent
 // ImageView iv = (ImageView) findViewById(R.id.imageView1);
