@@ -31,6 +31,7 @@
         <activity android:name=".Second"></activity>
         <activity android:name=".Frame"></activity>
         <activity android:name=".Table"></activity>
+        <activity android:name=".List"></activity>
     </application>
 
 </manifest>

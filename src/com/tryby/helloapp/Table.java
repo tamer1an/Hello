@@ -1,6 +1,7 @@
 package com.tryby.helloapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +21,9 @@ public class Table extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		if(v.getId() == R.id.button1){
 			Log.v("LEE", "Button1");
+			
+			Intent intent = new Intent(Table.this, List.class);						
+			startActivity(new Intent(intent)); 
 		}
 	}
 }

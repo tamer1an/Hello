@@ -42,6 +42,14 @@ public class MainActivity extends Activity {
         ImageView imageView = (ImageView) findViewById(R.id.imageView2);
         imageView.setImageResource(R.drawable.test);        
        
+        imageView.setOnClickListener(new OnClickListener() {		//intent.putExtra("text", et.getText().toString());			
+			public void onClick(View v) {
+				Log.d("LEE", "iw was clicked");//logging to console
+				Intent intent = new Intent(MainActivity.this, Frame.class);						
+				startActivity(new Intent(intent)); 
+			}
+		});
+        
         // check wi-fi connectivity
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         TextView tw = (TextView) findViewById(R.id.textView1);
