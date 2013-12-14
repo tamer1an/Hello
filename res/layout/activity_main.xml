@@ -11,7 +11,9 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/hello_world"
-        tools:context=".MainActivity" />
+        tools:context=".MainActivity" 
+        style="@style/code"
+        />
 
     <Button
         android:id="@+id/lunchSecond"
@@ -30,8 +32,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="53dp"
         android:ems="10" >
-
-        <requestFocus />
+		style="@style/code.red"
+        <!--  requestFocus /> -->
     </EditText>
 
     <ImageView
