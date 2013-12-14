@@ -1,5 +1,7 @@
 package com.tryby.helloapp;
 
+import java.util.zip.Inflater;
+
 import android.app.ListActivity;
 import android.content.Context;
 import android.os.Bundle;
@@ -7,7 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
+import android.widget.TextView;
 
 public class List extends ListActivity {
 
@@ -20,57 +25,47 @@ public class List extends ListActivity {
 //			this, 
 //			android.R.layout.simple_expandable_list_item_1, 
 //			getResources().getStringArray(R.array.countries))
-//		);
+//		);	
 		
 		setListAdapter(new MyAdapter<String>(
 			this, 
 			android.R.layout.simple_expandable_list_item_1, 
+			findViewById(R.id.textView7),
 			getResources().getStringArray(R.array.countries))
 		);
 	}
 
-	public class MyAdapter<T> extends ArrayAdapter<T> implements ListAdapter {
+	private class MyAdapter<T> extends ArrayAdapter<String> {
+		public MyAdapter(Context context, int resource, View view,
+				String[] strings) {
+			super(context, resource, strings);
+		}
 		
 		@Override
-		public View getView(int i,View conView, ViewGroup parent) {
+		public View getView(int position, View convertView, ViewGroup parent) {
 			
 			LayoutInflater inf = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		
-			return super.getView(getPosition(null), conView, parent);
+			View row = inf.inflate(R.layout.list_item, parent, false);
+			String[] items = getResources().getStringArray(R.array.countries);
+			
+			ImageView iw = (ImageView) row.findViewById(R.id.imageView7);
+			TextView tw = (TextView) row.findViewById(R.id.textView7);
+			
+			tw.setText(items[position]);
+			
+			if (items[position].equals("United State")){
+				iw.setImageResource(R.drawable.usa);
+			}else if(items[position].equals("Brazil")){
+				iw.setImageResource(R.drawable.brazil);
+			}else if(items[position].equals("Russia")){
+				iw.setImageResource(R.drawable.russia);
+			}else if(items[position].equals("Japan")){
+				iw.setImageResource(R.drawable.japan);
+			}else if(items[position].equals("Egypt")){
+				iw.setImageResource(R.drawable.france);
+			}
+			
+			return row; //			return super.getView(position, convertView, parent);
 		}
-
-		public MyAdapter(Context context, int resource) {
-			super(context, resource);
-			// TODO Auto-generated constructor stub
-		}
-
-		public MyAdapter(Context context, int resource, int textViewResourceId) {
-			super(context, resource, textViewResourceId);
-			// TODO Auto-generated constructor stub
-		}
-
-		public MyAdapter(Context context, int resource, T[] objects) {
-			super(context, resource, objects);
-			// TODO Auto-generated constructor stub
-		}
-
-		public MyAdapter(Context context, int textViewResourceId, List objects) {
-			super(context, textViewResourceId);
-			// TODO Auto-generated constructor stub
-		}
-
-		public MyAdapter(Context context, int resource, int textViewResourceId,
-				T[] objects) {
-			super(context, resource, textViewResourceId, objects);
-			// TODO Auto-generated constructor stub
-		}
-
-		public MyAdapter(Context context, int resource, int textViewResourceId,
-				List objects) {
-			super(context, resource, textViewResourceId);
-			// TODO Auto-generated constructor stub
-		}
-
 	}
 }
-
