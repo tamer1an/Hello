@@ -21,12 +21,14 @@ public class List extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list);	
 		
+		// default list item
 //		setListAdapter(new ArrayAdapter<String>(
 //			this, 
 //			android.R.layout.simple_expandable_list_item_1, 
 //			getResources().getStringArray(R.array.countries))
 //		);	
 		
+		// custom list item
 		setListAdapter(new MyAdapter<String>(
 			this, 
 			android.R.layout.simple_expandable_list_item_1, 

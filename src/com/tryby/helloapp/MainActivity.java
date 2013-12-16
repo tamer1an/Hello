@@ -33,6 +33,7 @@ public class MainActivity extends Activity {
         // find button and attach onClick handler
         final EditText et = (EditText) findViewById(R.id.editText1);
         
+        //logging change view and send some values
         Button b = (Button) findViewById(R.id.lunchSecond);
         b.setOnClickListener(new OnClickListener() {			
 			public void onClick(View v) {
@@ -69,6 +70,7 @@ public class MainActivity extends Activity {
         	tw.setText("wifi is off");
         }
         
+        // next activity
         tw.setOnClickListener(new OnClickListener() {		//intent.putExtra("text", et.getText().toString());			
 			public void onClick(View v) {
 				Log.d("LEE", "tw was clicked");//logging to console
@@ -79,11 +81,10 @@ public class MainActivity extends Activity {
         
 	// Implicit Intent
 	// ImageView iv = (ImageView) findViewById(R.id.imageView1);
-	// iv.setImageURI((Uri) getIntent().getExtras().get(Intent.EXTRA_STREAM));
-        
+	// iv.setImageURI((Uri) getIntent().getExtras().get(Intent.EXTRA_STREAM));        
     }
     
-    /////////////////////////
+    /////////////////////////   context menu
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v,
     		ContextMenuInfo menuInfo) {
@@ -99,7 +100,7 @@ public class MainActivity extends Activity {
      	return super.onContextItemSelected(item);
     }    
     
-    ////////////////////////
+    ////////////////////////  default menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.mymenu, menu);

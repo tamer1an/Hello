@@ -2,6 +2,7 @@ package com.tryby.helloapp;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
@@ -22,18 +23,38 @@ public class Table extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.table);	
 		
+		// next view
 		Button btn = (Button) findViewById(R.id.button1);
 		btn.setOnClickListener(this);	
 		
-		Button btn1 = (Button) findViewById(R.id.button2);
-		btn1.setOnClickListener(this);
+		// dialog alert
+		Button btn2 = (Button) findViewById(R.id.button2);
+		btn2.setOnClickListener(this);	
 		
+		// sequence animation 
 		ImageView iw = (ImageView) findViewById(R.id.imageView0);
 		iw.setBackgroundResource(R.anim.animation);
 		iw.setOnClickListener(this);
 		
+		// transition animation
 		CheckBox cb = (CheckBox) findViewById(R.id.checkBox1);
-		cb.setOnClickListener(this);
+		cb.setOnClickListener(this);		
+		
+		
+		// progress bar
+		final ProgressDialog pd = new ProgressDialog(this);
+		pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL); //STYLE_SPINNER
+		pd.setMessage("please wait...");		
+		pd.setIndeterminate(true);
+		pd.setCancelable(true);
+		
+		Button btn3 = (Button) findViewById(R.id.toggleButton1);
+		btn3.setOnClickListener(new OnClickListener() {			
+			@Override
+			public void onClick(View v) {
+				pd.show();
+			}
+		});	
 	}
 
 	public void onClick(View v) {		
@@ -70,6 +91,6 @@ public class Table extends Activity implements OnClickListener {
 			});
 			AlertDialog alert = builder.create();
 			alert.show();
-		}		
+		}
 	}
 }
