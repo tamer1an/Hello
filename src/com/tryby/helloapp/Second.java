@@ -12,7 +12,7 @@ public class Second extends Activity {
 		setContentView(R.layout.second);
 		
 		TextView tv = (TextView) findViewById(R.id.textView2);
-		tv.setText(getIntent().getExtras().getString("text"));
+		tv.setText(getIntent().getExtras().getString("text"));	
 		
 	}
 }
