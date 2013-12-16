@@ -22,7 +22,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="31dp"
-        android:text="Lunch second activity" />
+        android:text="@string/secondA" />
 
     <EditText
         android:id="@+id/editText1"
@@ -31,8 +31,9 @@
         android:layout_below="@+id/lunchSecond"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="53dp"
-        android:ems="10" >
-		style="@style/code.red"
+        android:ems="10"
+        style="@style/code.red" >
+		
         <!--  requestFocus /> -->
     </EditText>
 

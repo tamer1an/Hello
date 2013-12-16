@@ -1,7 +1,6 @@
 package com.tryby.helloapp;
 
 import android.net.ConnectivityManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
