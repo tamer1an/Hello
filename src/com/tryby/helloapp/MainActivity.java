@@ -1,13 +1,19 @@
 package com.tryby.helloapp;
 
+import java.util.zip.Inflater;
+
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,6 +55,9 @@ public class MainActivity extends Activity {
 			}
 		});
         
+        // context menu
+        registerForContextMenu(imageView);
+        
         // check wi-fi connectivity
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         TextView tw = (TextView) findViewById(R.id.textView1);
@@ -68,15 +77,39 @@ public class MainActivity extends Activity {
 			}
 		});
         
-// Implicit Intent
-// ImageView iv = (ImageView) findViewById(R.id.imageView1);
-// iv.setImageURI((Uri) getIntent().getExtras().get(Intent.EXTRA_STREAM));
+	// Implicit Intent
+	// ImageView iv = (ImageView) findViewById(R.id.imageView1);
+	// iv.setImageURI((Uri) getIntent().getExtras().get(Intent.EXTRA_STREAM));
         
     }
-
+    
+    /////////////////////////
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+    		ContextMenuInfo menuInfo) {
+    	super.onCreateContextMenu(menu, v, menuInfo);
+    	MenuInflater inf = getMenuInflater();
+    	inf.inflate(R.menu.mymenu, menu);
+    }
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {   
+    	if(item.getItemId() == R.id.item1){
+    		Log.d("LEE","OPTION1 CLICKED");
+    	}    	
+     	return super.onContextItemSelected(item);
+    }    
+    
+    ////////////////////////
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
+        getMenuInflater().inflate(R.menu.mymenu, menu);
         return true;
+    }    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {    	
+    	if(item.getItemId() == R.id.item1){
+    		Log.d("LEE","OPTION1 CLICKED");
+    	}    	
+    	return super.onOptionsItemSelected(item);
     }
 }

@@ -38,6 +38,8 @@ public final class R {
         public static final int imageView1=0x7f090003;
         public static final int imageView2=0x7f090004;
         public static final int imageView7=0x7f090006;
+        public static final int item1=0x7f090011;
+        public static final int item2=0x7f090012;
         public static final int lunchSecond=0x7f090001;
         public static final int menu_settings=0x7f090010;
         public static final int seekBar1=0x7f090005;
@@ -58,6 +60,7 @@ public final class R {
     }
     public static final class menu {
         public static final int activity_main=0x7f080000;
+        public static final int mymenu=0x7f080001;
     }
     public static final class string {
         public static final int app_name=0x7f060000;
