@@ -45,7 +45,7 @@ public class Table extends Activity implements OnClickListener {
 		final ProgressDialog pd = new ProgressDialog(this);
 		pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL); //STYLE_SPINNER
 		pd.setMessage("please wait...");		
-		pd.setIndeterminate(true);
+		pd.setIndeterminate(false);
 		pd.setCancelable(true);
 		
 		Button btn3 = (Button) findViewById(R.id.toggleButton1);
@@ -53,6 +53,7 @@ public class Table extends Activity implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 				pd.show();
+				pd.setProgress(50);
 			}
 		});	
 	}
