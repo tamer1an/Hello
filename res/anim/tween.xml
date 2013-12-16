@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<scale xmlns:android="http://schemas.android.com/apk/res/android" 
+<set xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:interpolator="@android:anim/accelerate_interpolator">
+    
+	<scale 
        android:fromXScale="0.5"
        android:toXScale="2.0"
        android:fromYScale="0.5"
@@ -9,5 +12,13 @@
        android:duration="4000"
     />
     
-
-
+	<rotate 
+	    android:fromDegrees="0"
+	    android:toDegrees="180"
+	    android:pivotX="50%"
+        android:pivotY="50%"
+        android:duration="2000"
+        android:startOffset="2000"
+	    />
+	
+</set>
