@@ -7,8 +7,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="U:\android\visonic2go" />
-            <option value="U:\android\visonic2go\interactive" />
+            <option value="U:\Hello\visonic2go" />
+            <option value="U:\Hello\visonic2go\interactive" />
           </set>
         </option>
       </GradleProjectSettings>

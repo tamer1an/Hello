@@ -3,5 +3,11 @@
 
     <string name="app_name">visonic2go</string>
     <string name="hello_world">Hello world!</string>
+    <string name="host_address">Host address</string>
+    <string name="panel_id">Panel Id</string>
+    <string name="code">Code</string>
+    <string name="terms">Term of use</string>
+    <string name="remember_login">Remember login</string>
+    <string name="login_submit">Login</string>
 
 </resources>
