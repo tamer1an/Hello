@@ -5,7 +5,7 @@
     tools:context="${packageName}.${activityClass}">
 
     <ImageView android:contentDescription="@string/hello_world"
-        android:id="@+id/imageView7"
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/visonic_logo"/>
@@ -14,10 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/host_address"
-        android:id="@+id/textView"
-        android:layout_below="@+id/imageView7"
-        android:layout_alignRight="@+id/imageView7"
-        android:layout_alignEnd="@+id/imageView7"
+        android:id="@+id/hostTextView"
+        android:layout_below="@+id/logo"
+        android:layout_alignRight="@+id/logo"
+        android:layout_alignEnd="@+id/logo"
         android:layout_marginTop="56dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -28,9 +28,9 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:layout_marginRight="25dp"
-        android:id="@+id/editText"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_toRightOf="@+id/textView"
+        android:id="@+id/hostEditText"
+        android:layout_alignBottom="@+id/hostTextView"
+        android:layout_toRightOf="@+id/hostTextView"
         android:layout_marginLeft="31dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -39,53 +39,53 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/panel_id"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
+        android:id="@+id/panelIdTextView"
+        android:layout_below="@+id/hostTextView"
         android:layout_marginTop="39dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/editText"
+        android:layout_toLeftOf="@+id/hostEditText"
         android:paddingLeft="15dp"
         android:singleLine="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:id="@+id/panelIdEditText"
+        android:layout_alignBottom="@+id/panelIdTextView"
+        android:layout_alignLeft="@+id/hostEditText"
+        android:layout_alignStart="@+id/hostEditText"
+        android:layout_alignRight="@+id/hostEditText"
+        android:layout_alignEnd="@+id/hostEditText" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/code"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/textView2"
+        android:id="@+id/codeTextView"
+        android:layout_below="@+id/panelIdTextView"
         android:layout_marginTop="40dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/editText"
+        android:layout_toLeftOf="@+id/hostEditText"
         android:paddingLeft="15dp"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_alignEnd="@+id/editText2" />
+        android:id="@+id/codeEditView"
+        android:layout_alignBottom="@+id/codeTextView"
+        android:layout_alignLeft="@+id/panelIdEditText"
+        android:layout_alignStart="@+id/panelIdEditText"
+        android:layout_alignRight="@+id/panelIdEditText"
+        android:layout_alignEnd="@+id/panelIdEditText" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login_submit"
-        android:id="@+id/button"
-        android:layout_above="@+id/checkBox2"
+        android:id="@+id/login"
+        android:layout_above="@+id/rememberSettings"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="55dp"
@@ -96,19 +96,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/terms"
-        android:id="@+id/checkBox"
-        android:layout_above="@+id/button"
-        android:layout_alignRight="@+id/editText3"
-        android:layout_alignEnd="@+id/editText3"
+        android:id="@+id/terms"
+        android:layout_above="@+id/login"
+        android:layout_alignRight="@+id/codeEditView"
+        android:layout_alignEnd="@+id/codeEditView"
         android:layout_marginBottom="40dp" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/remember_login"
-        android:id="@+id/checkBox2"
+        android:id="@+id/rememberSettings"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/editText3"
+        android:layout_toLeftOf="@+id/codeEditView"
         android:layout_marginBottom="45dp"
         android:checked="false" />
 
