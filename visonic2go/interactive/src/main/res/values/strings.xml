@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">visonic2go</string>
-    <string name="hello_world">Hello world!</string>
+    <!-- Login screen -->
+    <string name="app_name">Interactive</string>
     <string name="host_address">Host address</string>
     <string name="panel_id">Panel Id</string>
     <string name="code">Code</string>
     <string name="terms">Term of use</string>
     <string name="remember_login">Remember login</string>
     <string name="login_submit">Login</string>
-    <string name="title_activity_home">HomeActivity</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="hello_world">Interactive mobile application</string>
+
+
+    <!-- Menu tabs screen -->
+    <string name="title_activity_home">Inner Safety</string>
+    <string name="title_section1">Alarms</string>
+    <string name="title_section2">Cameras</string>
+    <string name="title_section3">Detectors</string>
+    <string name="title_section4">Alarm Details</string>
+    <string name="title_section5">Alert Details</string>
+    <string name="title_section6">Events</string>
     <string name="action_settings">Settings</string>
 
 </resources>
