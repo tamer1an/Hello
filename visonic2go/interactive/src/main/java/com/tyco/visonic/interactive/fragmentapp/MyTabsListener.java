@@ -1,13 +1,14 @@
-package com.tyco.visonic.interactive.sandbox;
+package com.tyco.visonic.interactive.fragmentapp;
 
 
 import android.app.ActionBar;
-import android.app.FragmentTransaction;
 import android.app.Fragment;
-
+import android.app.FragmentTransaction;
 import android.widget.Toast;
 
 import com.tyco.visonic.interactive.R;
+
+import static android.widget.Toast.makeText;
 
 class MyTabsListener implements ActionBar.TabListener {
     public Fragment fragment;
@@ -18,7 +19,13 @@ class MyTabsListener implements ActionBar.TabListener {
 
     @Override
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
-        Toast.makeText(StartActivity.appContext, "Reselected!", Toast.LENGTH_LONG).show();
+
+        try {
+            makeText(StartActivity.appContext, "Reselected!", Toast.LENGTH_LONG).show();
+        } catch (NullPointerException ignored){
+
+        }
+
     }
 
     @Override

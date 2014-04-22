@@ -16,25 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity
-            android:name="com.tyco.visonic.interactive.sandbox.HomeActivity"
+            android:name="com.tyco.visonic.interactive.fragmentapp.StartActivity"
             android:label="@string/title_activity_home" >
-        </activity>
-        <activity
-            android:name="com.tyco.visonic.interactive.sandbox.WideAppFlowListActivity"
-            android:label="@string/title_wideappflow_list" >
-        </activity>
-        <activity
-            android:name="com.tyco.visonic.interactive.sandbox.WideAppFlowDetailActivity"
-            android:label="@string/title_wideappflow_detail"
-            android:parentActivityName="com.tyco.visonic.interactive.sandbox.WideAppFlowListActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.tyco.visonic.interactive.WideAppFlowListActivity" />
-        </activity>
-        <activity
-            android:name="com.tyco.visonic.interactive.sandbox.StartActivity"
-            android:label="@string/title_activity_start" >
         </activity>
     </application>
 
