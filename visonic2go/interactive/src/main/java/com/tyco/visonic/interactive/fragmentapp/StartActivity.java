@@ -1,0 +1,57 @@
+package com.tyco.visonic.interactive.fragmentapp;
+
+import android.app.ActionBar;
+import android.app.Activity;
+import android.app.Fragment;
+import android.content.Context;
+import android.os.Bundle;
+
+import com.tyco.visonic.interactive.R;
+
+public class StartActivity extends Activity {
+    public static Context appContext;
+
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+
+//ActionBar gets initiatedS
+        ActionBar actionbar = getActionBar();
+//Tell the ActionBar we want to use Tabs.
+//        assert actionbar != null;
+//        if (actionbar != null) {
+            actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+        //initiating both tabs and set text to it.
+                ActionBar.Tab DetectorTab  = actionbar.newTab().setText(R.string.title_section3);
+                ActionBar.Tab CamerasTab   = actionbar.newTab().setText(R.string.title_section2);
+                ActionBar.Tab AlarmTab     = actionbar.newTab().setText(R.string.title_section4);
+                ActionBar.Tab AlertTab     = actionbar.newTab().setText(R.string.title_section5);
+                ActionBar.Tab EventsDTab   = actionbar.newTab().setText(R.string.title_section6);
+
+        //create the agments we want to use for display content
+                Fragment DetectFragment          = new DetectorsFragment();
+                Fragment CamerasFragment         = new CamerasFragment();
+                Fragment AlarmsFragmentFragment  = new AlarmsDetailsFragment();
+                Fragment AlertsDetailsFragment   = new AlertsDetailsFragment();
+                Fragment EventsFragment          = new EventsFragment();
+
+        //set the Tab listener. Now we can listen for clicks.
+                DetectorTab.setTabListener(new MyTabsListener(DetectFragment));
+                CamerasTab.setTabListener( new MyTabsListener(CamerasFragment));
+                AlarmTab.setTabListener(   new MyTabsListener(AlarmsFragmentFragment));
+                AlertTab.setTabListener(   new MyTabsListener(AlertsDetailsFragment));
+                EventsDTab.setTabListener( new MyTabsListener(EventsFragment));
+
+        //add the two tabs to the actionbar
+                actionbar.addTab(DetectorTab);
+                actionbar.addTab(CamerasTab);
+                actionbar.addTab(AlarmTab);
+                actionbar.addTab(AlertTab);
+                actionbar.addTab(EventsDTab);
+
+//        }
+    }
+}
