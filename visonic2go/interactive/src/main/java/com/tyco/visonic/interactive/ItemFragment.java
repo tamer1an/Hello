@@ -13,7 +13,7 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 
-import com.tyco.visonic.interactive.dummy.DummyContent;
+import com.tyco.visonic.interactive.sandbox.dummy.DummyContent;
 
 /**
  * A fragment representing a list of Items.
@@ -85,6 +85,7 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
         View view = inflater.inflate(R.layout.fragment_item, container, false);
 
         // Set the adapter
+        assert view != null;
         mListView = (AbsListView) view.findViewById(android.R.id.list);
         ((AdapterView<ListAdapter>) mListView).setAdapter(mAdapter);
 
@@ -130,6 +131,7 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
         View emptyView = mListView.getEmptyView();
 
         if (emptyText instanceof TextView) {
+            assert ((TextView) emptyView) != null;
             ((TextView) emptyView).setText(emptyText);
         }
     }

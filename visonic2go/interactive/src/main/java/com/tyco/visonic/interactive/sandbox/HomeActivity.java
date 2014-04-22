@@ -1,4 +1,4 @@
-package com.tyco.visonic.interactive;
+package com.tyco.visonic.interactive.sandbox;
 
 import java.util.Locale;
 
@@ -10,13 +10,14 @@ import android.app.FragmentTransaction;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.tyco.visonic.interactive.R;
 
 
 public class HomeActivity extends Activity implements ActionBar.TabListener {
@@ -78,6 +79,7 @@ public class HomeActivity extends Activity implements ActionBar.TabListener {
                 actionBar.addTab(
                         actionBar.newTab()
                                 .setText(mSectionsPagerAdapter.getPageTitle(i))
+//                                .setIcon()
                                 .setTabListener(this));
             }
         }
@@ -193,7 +195,8 @@ public class HomeActivity extends Activity implements ActionBar.TabListener {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            TextView textView = (TextView) (rootView != null ? rootView.findViewById(R.id.section_label) : null);
+            assert textView != null;
             textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
