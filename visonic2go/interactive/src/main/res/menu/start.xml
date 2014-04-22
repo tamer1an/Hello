@@ -3,7 +3,17 @@
     tools:context="com.tyco.visonic.interactive.sandbox.StartActivity" >
     
     <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
+        android:title="Away"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+
+    <item android:id="@+id/action_settings1"
+        android:title="Home"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+
+    <item android:id="@+id/action_settings2"
+        android:title="Alarm"
         android:orderInCategory="100"
         android:showAsAction="never" />
 </menu>
