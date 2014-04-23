@@ -3,17 +3,21 @@
     tools:context="com.tyco.visonic.interactive.sandbox.StartActivity" >
     
     <item android:id="@+id/action_settings"
-        android:title="Away"
+        android:title="@string/away_state"
         android:orderInCategory="100"
-        android:showAsAction="never" />
+        android:showAsAction="never"
+        android:icon="@android:drawable/ic_lock_idle_lock"/>
 
     <item android:id="@+id/action_settings1"
-        android:title="Home"
+        android:title="@string/home_state"
         android:orderInCategory="100"
-        android:showAsAction="never" />
+        android:showAsAction="never"
+        android:icon="@android:drawable/button_onoff_indicator_on"/>
 
     <item android:id="@+id/action_settings2"
-        android:title="Alarm"
+        android:title="@string/alram_state"
         android:orderInCategory="100"
-        android:showAsAction="never" />
+        android:titleCondensed="@string/alram_state"
+        android:icon="@android:drawable/button_onoff_indicator_off"/>
+
 </menu>

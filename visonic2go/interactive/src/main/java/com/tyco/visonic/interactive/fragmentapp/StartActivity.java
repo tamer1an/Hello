@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.AndroidCharacter;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -27,11 +28,11 @@ public class StartActivity extends Activity {
             actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         //initiating both tabs and set text to it.
-                ActionBar.Tab DetectorTab  = actionbar.newTab().setText(R.string.title_section3);
-                ActionBar.Tab CamerasTab   = actionbar.newTab().setText(R.string.title_section2);
-                ActionBar.Tab AlarmTab     = actionbar.newTab().setText(R.string.title_section4);
-                ActionBar.Tab AlertTab     = actionbar.newTab().setText(R.string.title_section5);
-                ActionBar.Tab EventsDTab   = actionbar.newTab().setText(R.string.title_section6);
+                ActionBar.Tab DetectorTab  = actionbar.newTab().setIcon(android.R.drawable.ic_menu_view); //.setText(R.string.title_section3); //@android:drawable/stat_sys_phone_call
+                ActionBar.Tab CamerasTab   = actionbar.newTab().setIcon(android.R.drawable.stat_notify_voicemail);   //.setText(R.string.title_section2);
+                ActionBar.Tab AlarmTab     = actionbar.newTab().setIcon(android.R.drawable.stat_sys_warning);  //.setText(R.string.title_section4);
+                ActionBar.Tab AlertTab     = actionbar.newTab().setIcon(android.R.drawable.ic_menu_myplaces);//.setText(R.string.title_section5);
+                ActionBar.Tab EventsDTab   = actionbar.newTab().setIcon(android.R.drawable.ic_menu_compass); //.setText(R.string.title_section6);
 
         //create the agments we want to use for display content
                 Fragment DetectFragment          = new DetectorsFragment();
