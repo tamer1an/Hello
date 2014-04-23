@@ -11,16 +11,16 @@ import com.tyco.visonic.interactive.R;
 
 import java.util.List;
 
-public class DetectorsListAdapter<T> extends ArrayAdapter<String> {
+public class CamerasListAdapter<T> extends ArrayAdapter<String> {
 
     public String[] Items;
 
-    public DetectorsListAdapter(Context context, int resource, List<String> objects) {
+    public CamerasListAdapter(Context context, int resource, List<String> objects) {
         super(context, resource, objects);
     }
 
-    public DetectorsListAdapter(Context context, int resource, View view,
-                     String[] strings) {
+    public CamerasListAdapter(Context context, int resource, View view,
+                              String[] strings) {
         super(context, resource, strings);
 
         Items = strings;
@@ -30,14 +30,14 @@ public class DetectorsListAdapter<T> extends ArrayAdapter<String> {
     public View getView(int position, View convertView, ViewGroup parent) { //        View row = convertView;
 
         LayoutInflater inf = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View row = inf.inflate(R.layout.detectors_list_item_2, parent, false);
+        View row = inf.inflate(R.layout.cameras_list_item, parent, false);
 
-        try {
+       /* try {
             TextView tw = (TextView) row.findViewById(R.id.detectors_list_text_2);
             tw.setText(Items[position]);
         }catch (NullPointerException ignored){
 
-        }
+        }*/
 
         return row;  // return super.getView(position, convertView, parent);
     }

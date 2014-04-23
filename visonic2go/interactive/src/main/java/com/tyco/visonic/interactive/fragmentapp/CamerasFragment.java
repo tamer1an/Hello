@@ -6,14 +6,23 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.tyco.visonic.interactive.fragmentapp.listadapters.CamerasListAdapter;
+import com.tyco.visonic.interactive.fragmentapp.listadapters.DetectorsListAdapter;
+
 public class CamerasFragment extends ListFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         String[] values = new String[] { "Front Door", "Garage", "Garage Door", "Back Door"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
-                android.R.layout.simple_list_item_1, values);
-        setListAdapter(adapter);
+
+
+        // custom list item
+        setListAdapter(new CamerasListAdapter<>(
+                        getActivity(),
+                        android.R.layout.simple_expandable_list_item_1,
+                        getView(),
+                        values)
+        );
     }
 
     @Override
