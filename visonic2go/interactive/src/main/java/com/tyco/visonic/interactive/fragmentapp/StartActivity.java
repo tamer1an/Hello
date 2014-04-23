@@ -31,8 +31,8 @@ public class StartActivity extends Activity {
                 ActionBar.Tab DetectorTab  = actionbar.newTab().setIcon(android.R.drawable.ic_menu_view); //.setText(R.string.title_section3); //@android:drawable/stat_sys_phone_call
                 ActionBar.Tab CamerasTab   = actionbar.newTab().setIcon(android.R.drawable.stat_notify_voicemail);   //.setText(R.string.title_section2);
                 ActionBar.Tab AlarmTab     = actionbar.newTab().setIcon(android.R.drawable.stat_sys_warning);  //.setText(R.string.title_section4);
-                ActionBar.Tab AlertTab     = actionbar.newTab().setIcon(android.R.drawable.ic_menu_myplaces);//.setText(R.string.title_section5);
-                ActionBar.Tab EventsDTab   = actionbar.newTab().setIcon(android.R.drawable.ic_menu_compass); //.setText(R.string.title_section6);
+                ActionBar.Tab AlertTab     = actionbar.newTab().setIcon(android.R.drawable.ic_dialog_alert);//.setText(R.string.title_section5);
+                ActionBar.Tab EventsDTab   = actionbar.newTab().setIcon(android.R.drawable.ic_menu_agenda); //.setText(R.string.title_section6);
 
         //create the agments we want to use for display content
                 Fragment DetectFragment          = new DetectorsFragment();
