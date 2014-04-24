@@ -1,14 +1,13 @@
 package com.tyco.visonic.interactive.fragmentapp.listadapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 import com.tyco.visonic.interactive.R;
-
 import java.util.List;
 
 public class CamerasListAdapter<T> extends ArrayAdapter<String> {
@@ -24,20 +23,23 @@ public class CamerasListAdapter<T> extends ArrayAdapter<String> {
         super(context, resource, strings);
 
         Items = strings;
+//      copyInputStreamToOutputStream(in, System.out);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) { //        View row = convertView;
 
         LayoutInflater inf = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View row = inf.inflate(R.layout.cameras_list_item, parent, false);
+        @SuppressLint("ViewHolder") View row = inf.inflate(R.layout.cameras_list_item, parent, false);
 
-       /* try {
+       /*
+       try {
             TextView tw = (TextView) row.findViewById(R.id.detectors_list_text_2);
             tw.setText(Items[position]);
         }catch (NullPointerException ignored){
 
-        }*/
+        }
+        */
 
         return row;  // return super.getView(position, convertView, parent);
     }
@@ -70,3 +72,5 @@ public class CamerasListAdapter<T> extends ArrayAdapter<String> {
         return row; //			return super.getView(position, convertView, parent);
     }
 }*/
+
+
