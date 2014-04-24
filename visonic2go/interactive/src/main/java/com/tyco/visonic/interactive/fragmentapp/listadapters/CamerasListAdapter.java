@@ -23,7 +23,6 @@ public class CamerasListAdapter<T> extends ArrayAdapter<String> {
         super(context, resource, strings);
 
         Items = strings;
-//      copyInputStreamToOutputStream(in, System.out);
     }
 
     @Override
