@@ -5,31 +5,11 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.AndroidCharacter;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.tyco.visonic.interactive.R;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.conn.scheme.Scheme;
-import org.apache.http.conn.scheme.SchemeRegistry;
-import org.apache.http.conn.ssl.SSLSocketFactory;
-import org.apache.http.conn.ssl.X509HostnameVerifier;
-import org.apache.http.impl.client.BasicResponseHandler;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.impl.conn.SingleClientConnManager;
-
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
 
 public class StartActivity extends Activity {
     public static Context appContext;
@@ -75,7 +55,6 @@ public class StartActivity extends Activity {
         actionbar.addTab(AlertTab);
         actionbar.addTab(EventsDTab);
 //        }
-
     }
 
     @Override
@@ -98,81 +77,3 @@ public class StartActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 }
-
-
-//        URL url = null;
-//        try {
-//            url = new URL("https://94.125.125.228/rest_api/1.0/get_cameras");
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
-//        URLConnection urlConnection = null;
-//        try {
-//            urlConnection = url.openConnection();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        InputStream in = null;
-//        try {
-//            in = urlConnection.getInputStream();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-///////////////////////////////////////////////////////////////////////
-//
-//        try {
-//            HttpClient client = new DefaultHttpClient();
-//            HttpGet request = new HttpGet();
-//            request.setURI(new URI("https://94.125.125.228/rest_api/1.0/get_cameras"));
-//            HttpResponse response = client.execute(request);
-//        } catch (URISyntaxException | IOException e) {
-//            e.printStackTrace();
-//        }
-
-
-/*/////////////////////////////////////////////////////////////////////
-        HostnameVerifier hostnameVerifier = org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER;
-        DefaultHttpClient client = new DefaultHttpClient();
-
-        SchemeRegistry registry = new SchemeRegistry();
-        SSLSocketFactory socketFactory = SSLSocketFactory.getSocketFactory();
-        socketFactory.setHostnameVerifier((X509HostnameVerifier) hostnameVerifier);
-        registry.register(new Scheme("https", socketFactory, 443));
-        SingleClientConnManager mgr = new SingleClientConnManager(client.getParams(), registry);
-        DefaultHttpClient httpClient = new DefaultHttpClient(mgr, client.getParams());
-
-// Set verifier
-        HttpsURLConnection.setDefaultHostnameVerifier(hostnameVerifier);
-
-// Example send http request
-        final String url = "https://94.125.125.228/rest_api/1.0/get_cameras";
-//        HttpPost httpPost = new HttpPost(url);
-        HttpGet httpGet = new HttpGet(url);
-        try {
-            HttpResponse response = httpClient.execute(httpGet);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-*/
-
-/////////////////////////////////////
-//HttpClient Client = new DefaultHttpClient();
-//// Create URL string
-//String URL = "http://androidexample.com/media/webservice/httpget.php?user=aawf";
-////Log.i("httpget", URL);
-//
-//try {
-//        String SetServerString = "";
-//        // Create Request to server and get response
-//
-//        HttpGet httpget = new HttpGet(URL);
-//        ResponseHandler<String> responseHandler = new BasicResponseHandler();
-//        SetServerString = Client.execute(httpget, responseHandler);
-//
-//        // Show response on activity
-//        Toast.makeText(getApplicationContext(),SetServerString, Toast.LENGTH_LONG).show();
-//        } catch (Exception ex) {
-//        Toast.makeText(getApplicationContext(),"fail", Toast.LENGTH_LONG).show();
-//        }
-//
-//        Toast.makeText(getApplicationContext(),"fail", Toast.LENGTH_LONG).show();
