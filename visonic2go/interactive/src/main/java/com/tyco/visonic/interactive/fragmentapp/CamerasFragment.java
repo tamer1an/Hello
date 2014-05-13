@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import com.tyco.visonic.interactive.R;
 import com.tyco.visonic.interactive.fragmentapp.listadapters.CamerasListAdapter;
 
 public class CamerasFragment extends ListFragment {
@@ -19,6 +17,17 @@ public class CamerasFragment extends ListFragment {
 
 
         AsyncTask<String, String, String> getListTask = new RequestTask(){
+            @Override
+            protected void onPreExecute() {
+                try{
+                    this.ctx = getView().getContext();
+                } catch (Exception e){
+                    e.getStackTrace();
+                }
+
+                super.onPreExecute();
+            }
+
             @Override public void onPostExecute(String result)
             {
 //                String response_str = EntityUtils.toString(entity, HTTP.UTF_8);
@@ -27,7 +36,7 @@ public class CamerasFragment extends ListFragment {
 //                Log.e("status","code "+i);
 //                return response_str;
             }
-        }.execute("http://androidexample.com/media/webservice/httpget.php?user=aawf");
+        }.execute("https://server.visonic-lab.pp.ua/rest_api/1.0/dump?par1=val1&par2=val2");
 
 
         // custom list item

@@ -1,17 +1,7 @@
 package com.tyco.visonic.interactive;
 
 import android.content.Context;
-
-//import org.apache.http.conn.ClientConnectionManager;
-//import org.apache.http.conn.scheme.PlainSocketFactory;
-//import org.apache.http.conn.scheme.Scheme;
-//import org.apache.http.conn.scheme.SchemeRegistry;
-//import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.impl.client.DefaultHttpClient;
-//import org.apache.http.impl.conn.SingleClientConnManager;
-//
-//import java.io.InputStream;
-//import java.security.KeyStore;
 
 public class MyHttpClient extends DefaultHttpClient {
 
@@ -64,3 +54,27 @@ public class MyHttpClient extends DefaultHttpClient {
 //// Execute the GET call and obtain the response
 //HttpResponse getResponse = client.execute(get);
 //HttpEntity responseEntity = getResponse.getEntity();
+
+//    public static HttpClient createHttpClient(){
+//        try {
+//            KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
+//            trustStore.load(null, null);
+//
+//            SSLSocketFactory sf = new MySSLSocketFactory(trustStore);
+//            sf.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+//
+//            HttpParams params = new BasicHttpParams();
+//            HttpConnectionParams.setConnectionTimeout(params, 15000);
+//            HttpConnectionParams.setSoTimeout(params, 5000);
+//
+//            SchemeRegistry registry = new SchemeRegistry();
+//            registry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
+//            registry.register(new Scheme("https", sf, 443));
+//
+//            ClientConnectionManager ccm = new ThreadSafeClientConnManager(params, registry);
+//
+//            return new DefaultHttpClient(ccm, params);
+//        } catch (Exception e) {
+//            return new DefaultHttpClient();
+//        }
+//    }
