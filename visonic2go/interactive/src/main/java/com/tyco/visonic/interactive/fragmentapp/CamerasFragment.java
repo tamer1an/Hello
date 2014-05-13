@@ -36,7 +36,9 @@ public class CamerasFragment extends ListFragment {
 //                Log.e("status","code "+i);
 //                return response_str;
             }
-        }.execute("https://server.visonic-lab.pp.ua/rest_api/1.0/dump?par1=val1&par2=val2");
+        }
+//        .execute("https://ser_cameras");
+        .execute("https://serve2=val2");
 
 
         // custom list item

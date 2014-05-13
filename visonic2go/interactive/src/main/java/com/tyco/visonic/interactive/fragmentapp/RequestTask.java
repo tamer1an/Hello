@@ -104,8 +104,8 @@ class RequestTask extends AsyncTask<String, String, String> {
             HttpsURLConnection urlConnection =
                     (HttpsURLConnection) url.openConnection();
 
-            String userCredentials = "X:X";
-            String basicAuth = "Basic " + new String( Base64.encode(userCredentials.getBytes(), 0));
+            String userCredentials = "x:x";
+            String basicAuth = "Basic " + new String(Base64.encode(userCredentials.getBytes(), 0));
 
             urlConnection.setRequestProperty ("Authorization", basicAuth);
             urlConnection.setRequestMethod("GET");
@@ -118,12 +118,10 @@ class RequestTask extends AsyncTask<String, String, String> {
 
             urlConnection.setSSLSocketFactory(context.getSocketFactory());
 
-            Log.d("SSSS",""+urlConnection.getResponseCode());
+            Log.d("STATUS CODE",""+urlConnection.getResponseCode());
 
             InputStream in = urlConnection.getInputStream();
             copyInputStreamToOutputStream(in, System.out);
-
-            urlConnection.getResponseCode();
 
             return "ok";
 
