@@ -19,11 +19,6 @@ public class CamerasFragment extends ListFragment {
         AsyncTask<String, String, String> getListTask = new RequestTask(){
             @Override
             protected void onPreExecute() {
-                try{
-                    this.ctx = getView().getContext();
-                } catch (Exception e){
-                    e.getStackTrace();
-                }
 
                 super.onPreExecute();
             }
@@ -31,15 +26,13 @@ public class CamerasFragment extends ListFragment {
             @Override public void onPostExecute(String result)
             {
 //                String response_str = EntityUtils.toString(entity, HTTP.UTF_8);
-                  Log.e("output", result);
+                  Log.d("output", result);
 //                int i = response.getStatusLine().getStatusCode();
 //                Log.e("status","code "+i);
 //                return response_str;
             }
         }
-//        .execute("https://ser_cameras");
-        .execute("https://serve2=val2");
-
+        .execute("https:// ... /rest_api/1.0/get_cameras");
 
         // custom list item
         setListAdapter(new CamerasListAdapter<>(
@@ -55,3 +48,13 @@ public class CamerasFragment extends ListFragment {
         // do something with the data
     }
 }
+
+//try{
+//        this.ctx = getView().getContext();
+//        } catch (Exception e){
+//        e.getStackTrace();
+//        }
+
+//        .execute("https:// ... /rest_api/1.0/dump?par1=val1&par2=val2");
+//        .execute("https:// ... /rest_api/1.0/is_connected");
+//        .execute("https:// ... /rest_api/1.0/get_status");
