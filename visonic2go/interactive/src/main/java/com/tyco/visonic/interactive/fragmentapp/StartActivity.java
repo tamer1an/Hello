@@ -14,17 +14,19 @@ import com.tyco.visonic.interactive.R;
 public class StartActivity extends Activity {
     public static Context appContext;
 
-    /** Called when the activity is first created. */
+    /**
+     * Called when the activity is first created.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-//ActionBar gets initiatedS
+        //ActionBar gets initiatedS
         ActionBar actionbar = getActionBar();
-//Tell the ActionBar we want to use Tabs.
-//        assert actionbar != null;
-//        if (actionbar != null) {
+
+        //Tell the ActionBar we want to use Tabs.
+        assert actionbar != null;
         actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         //initiating both tabs and set text to it.
@@ -54,7 +56,6 @@ public class StartActivity extends Activity {
         actionbar.addTab(AlarmTab);
         actionbar.addTab(AlertTab);
         actionbar.addTab(EventsDTab);
-//        }
     }
 
     @Override

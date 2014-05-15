@@ -18,35 +18,25 @@ public class CamerasFragment extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-//        String[] values = new String[] { "Front Door", "Garage", "Garage Door", "Back Door" };
-
-        AsyncTask<String, String, String> getListTask = new RequestTask(){
+        new RequestTask() { /*AsyncTask<String, String, String> getListTask =*/
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
             }
 
-            @Override public void onPostExecute(String result)
-            {
-//                String response_str = EntityUtils.toString(entity, HTTP.UTF_8);
-                  Log.d("output", result);
-//                int i = response.getStatusLine().getStatusCode();
-//                Log.e("status","code "+i);
-//                return response_str;
+            @Override
+            public void onPostExecute(String result) { // String response_str = EntityUtils.toString(result, HTTP.UTF_8);
+                Log.d("output", result);
 
                 try {
                     JSONObject responseObject = new JSONObject(result);
                     JSONArray c = responseObject.getJSONArray("content");
                     String[] val = new String[c.length()];
 
-                    for (int i = 0 ; i < c.length(); i++) {
+                    for (int i = 0; i < c.length(); i++) {
                         JSONObject obj = c.getJSONObject(i);
 
-                        String location = obj.getString("location");
-                        String zone = obj.getString("zone");
-
-                        System.out.println(location + " " + zone + " ");
-
+                        String location = obj.getString("location");  // String zone = obj.getString("zone");  // System.out.println(location + " " + zone + " ");
                         val[i] = location;
                     }
 
@@ -60,23 +50,15 @@ public class CamerasFragment extends ListFragment {
 
                 } catch (JSONException e) {
                     e.printStackTrace();
+                } catch (NullPointerException ignored) {
+
                 }
             }
-        }.execute("https://.../rest_api/1.0/get_cameras");
+        }.execute("https://server.visonic-lab.pp.ua/rest_api/1.0/get_cameras");
     }
 
-    @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        // do something with the data
-    }
+//    @Override
+//    public void onListItemClick(ListView l, View v, int position, long id) {
+//        // do something with the data
+//    }
 }
-
-//try{
-//        this.ctx = getView().getContext();
-//        } catch (Exception e){
-//        e.getStackTrace();
-//        }
-
-//        .execute("https:// ... /rest_api/1.0/dump?par1=val1&par2=val2");
-//        .execute("https:// ... /rest_api/1.0/is_connected");
-//        .execute("https:// ... /rest_api/1.0/get_status");
