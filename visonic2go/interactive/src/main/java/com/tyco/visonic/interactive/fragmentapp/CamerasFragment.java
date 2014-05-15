@@ -9,17 +9,20 @@ import android.widget.ListView;
 
 import com.tyco.visonic.interactive.fragmentapp.listadapters.CamerasListAdapter;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class CamerasFragment extends ListFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        String[] values = new String[] { "Front Door", "Garage", "Garage Door", "Back Door"};
 
+//        String[] values = new String[] { "Front Door", "Garage", "Garage Door", "Back Door" };
 
         AsyncTask<String, String, String> getListTask = new RequestTask(){
             @Override
             protected void onPreExecute() {
-
                 super.onPreExecute();
             }
 
@@ -30,17 +33,36 @@ public class CamerasFragment extends ListFragment {
 //                int i = response.getStatusLine().getStatusCode();
 //                Log.e("status","code "+i);
 //                return response_str;
-            }
-        }
-        .execute("https:// ... /rest_api/1.0/get_cameras");
 
-        // custom list item
-        setListAdapter(new CamerasListAdapter<>(
-                        getActivity(),
-                        android.R.layout.simple_expandable_list_item_1,
-                        getView(),
-                        values)
-        );
+                try {
+                    JSONObject responseObject = new JSONObject(result);
+                    JSONArray c = responseObject.getJSONArray("content");
+                    String[] val = new String[c.length()];
+
+                    for (int i = 0 ; i < c.length(); i++) {
+                        JSONObject obj = c.getJSONObject(i);
+
+                        String location = obj.getString("location");
+                        String zone = obj.getString("zone");
+
+                        System.out.println(location + " " + zone + " ");
+
+                        val[i] = location;
+                    }
+
+                    // custom list item
+                    setListAdapter(new CamerasListAdapter<>(
+                                    getActivity(),
+                                    android.R.layout.simple_expandable_list_item_1,
+                                    getView(),
+                                    val)
+                    );
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.execute("https://.../rest_api/1.0/get_cameras");
     }
 
     @Override

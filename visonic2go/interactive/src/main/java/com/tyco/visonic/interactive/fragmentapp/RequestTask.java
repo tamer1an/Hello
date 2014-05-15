@@ -15,6 +15,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 class RequestTask extends AsyncTask<String, String, String> {
     private final String USER_AGENT = "Mozilla/5.0";
+    private StringBuffer respSB;
 
     @Override
     protected String doInBackground(String... params) {
@@ -44,24 +45,45 @@ class RequestTask extends AsyncTask<String, String, String> {
 //          urlConnection.setRequestProperty("Content-Length", "0");
 
             Log.d("STATUS CODE",""+urlConnection.getResponseCode());
+            Log.d("RESP MSG",""+urlConnection.getResponseMessage());
 
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 InputStream in = urlConnection.getInputStream();
-                copyInputStreamToOutputStream(in, System.out);
+                respSB = copyInputStreamToOutputStream(in, System.out);
             } else {
                 InputStream in = urlConnection.getErrorStream();
                 copyInputStreamToOutputStream(in, System.out);
             }
 
-            return urlConnection.getResponseMessage();
-
+            return respSB.toString();
         } catch (Exception e) {
             return "Network problem" + e.toString();
         }
     }
 
-    private void copyInputStreamToOutputStream(InputStream in, PrintStream out) throws IOException {
+    private StringBuffer copyInputStreamToOutputStream(InputStream in, PrintStream out) throws IOException {
         Log.d("output", in.toString());
+
+        StringBuffer sb = new StringBuffer();
+        try {
+            int ch;
+
+            while ((ch = in.read()) != -1) {
+                sb.append((char) ch);
+            }
+//            out.println(sb.toString());
+        } catch (IOException e) {
+            throw e;
+        } finally {
+            if (in != null) {
+                in.close();
+            }
+        }
+        return sb;
+    }
+}
+
+/*
 
 //        byte[] buffer = new byte[1024]; // Adjust if you want
 //        int bytesRead;
@@ -75,25 +97,8 @@ class RequestTask extends AsyncTask<String, String, String> {
 //            out.write(buffer, 0, bytesRead);
 //        }
 
-        try {
-            int ch;
-            StringBuffer sb = new StringBuffer();
-            while ((ch = in.read()) != -1) {
-                sb.append((char) ch);
-            }
-            out.println(sb.toString());
-        } catch (IOException e) {
-            throw e;
-        } finally {
-            if (in != null) {
-                in.close();
-            }
-        }
-    }
-}
 
-/*
-
+///////////////////////////////////////////////////
     java.security.cert.Certificate ca;
     InputStream caInput;
     CertificateFactory cf;

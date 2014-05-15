@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.tyco.visonic.interactive.R;
 import java.util.List;
@@ -31,14 +32,12 @@ public class CamerasListAdapter<T> extends ArrayAdapter<String> {
         LayoutInflater inf = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         @SuppressLint("ViewHolder") View row = inf.inflate(R.layout.cameras_list_item, parent, false);
 
-       /*
-       try {
-            TextView tw = (TextView) row.findViewById(R.id.detectors_list_text_2);
+        try {
+            TextView tw = (TextView) row.findViewById(R.id.cameraFirstLine);
             tw.setText(Items[position]);
         }catch (NullPointerException ignored){
 
         }
-        */
 
         return row;  // return super.getView(position, convertView, parent);
     }
