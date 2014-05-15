@@ -34,7 +34,7 @@ class RequestTask extends AsyncTask<String, String, String> {
 //          urlConnection.setRequestMethod("POST");
 //          urlConnection.setRequestProperty("User-Agent", USER_AGENT);
 
-            String userCredentials = "200002:1111";
+            String userCredentials = "X:X";
             String basicAuth = "Basic " + new String(Base64.encode(userCredentials.getBytes(), 0));
             urlConnection.setRequestProperty("Authorization", basicAuth);
 

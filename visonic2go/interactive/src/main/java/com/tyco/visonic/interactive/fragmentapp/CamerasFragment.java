@@ -54,7 +54,7 @@ public class CamerasFragment extends ListFragment {
 
                 }
             }
-        }.execute("https://server.visonic-lab.pp.ua/rest_api/1.0/get_cameras");
+        }.execute("https://..../rest_api/1.0/get_cameras");
     }
 
 //    @Override
